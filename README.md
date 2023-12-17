@@ -231,4 +231,20 @@
    {% endif %}
    {% endblock %}
    ```
-   ### {% csrf_token %} is for security issue to prevent the hacking from the user
+   ##### {% csrf_token %} is for security issue to prevent the hacking from the 
+3. setting `base.html`
+   ```html
+     <div class="container"><br>
+        <br/>
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{message}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock%}
+      </div>
+   ```
